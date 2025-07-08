@@ -10,7 +10,7 @@ Create the shortest possible XPath that still uniquely identifies the element. S
 5.Avoid Indexes Whenever Possible:
 Do not select elements by their position or index. Use stable attributes for uniqueness instead.
 6.Avoid Unstable Attributes:
-Do not use attributes like @class, @bounds, or @package, as these can change across devices or app versions.
+Do not use @bounds, as these can change across devices or app versions.
 7.Combine Multiple Stable Attributes if Needed:
 If a single attribute does not guarantee uniqueness, combine two or more stable attributes (such as @resource-id and @content-desc).
 8.Ensure XPath Uniqueness:

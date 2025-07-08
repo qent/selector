@@ -21,7 +21,7 @@ def parse_node(xml_node: ElementTree.Element) -> dict[str, Any]:
         "content-desc": attrib.get("content-desc"),
         "children": children,
     }
-    return {k: v for k, v in node.items() if v not in (None, [], {})}
+    return {k: v for k, v in node.items() if v not in (None, "", [], {})}
 
 
 def parse_xml_to_tree(xml_path: str) -> list[dict[str, Any]]:
