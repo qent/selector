@@ -25,7 +25,7 @@ async def call_tool() -> tuple[list[TextContent], dict[str, list[dict]]]:
     fake_device = MagicMock()
     fake_device.dump_hierarchy.return_value = XML
     with patch("server.u2.connect", return_value=fake_device):
-        result = await server.call_tool("screen_hierarchy", {})
+        result = await server.call_tool("android_screen_hierarchy", {})
     assert isinstance(result, tuple), "Unexpected tool result type"
     content_list, structured = result
     assert content_list, "No content returned"

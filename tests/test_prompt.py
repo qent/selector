@@ -10,7 +10,7 @@ from server import PROMPT_FILE, server
 
 
 async def get_prompt_text() -> str:
-    result = await server.get_prompt("xpath_rules")
+    result = await server.get_prompt("xpath_selector_rules")
     messages = result.messages
     assert messages, "No messages returned"
     content = messages[0].content
