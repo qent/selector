@@ -8,7 +8,7 @@ This repository contains a minimal [MCP](https://github.com/modelcontextprotocol
 Install dependencies:
 
 ```bash
-pip install mcp
+pip install -r requirements.txt
 ```
 
 ## Running the server
