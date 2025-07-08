@@ -21,4 +21,18 @@ cd selector
 python server.py
 ```
 
-The server will start in `stdio` mode. Use any compatible MCP client to request the `xpath_rules` prompt.
+The server will start in `stdio` mode. Use any compatible MCP client to request
+the `xpath_selector_rules` prompt.
+
+## Connecting to a client
+
+Install the optional CLI tools and register the server with your MCP client:
+
+```bash
+pip install "mcp[cli]"
+mcp install server.py
+```
+
+After installation, start the server from the client and request the
+`xpath_selector_rules` prompt or call the `android_screen_hierarchy` tool as
+needed.
