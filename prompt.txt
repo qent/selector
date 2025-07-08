@@ -1,0 +1,21 @@
+Generating XPath Selectors for Android UI Elements
+1.Prioritize Stable, Unique Attributes:
+Always use @resource-id and @content-desc as the primary basis for XPath selectors whenever they are available.
+2.Avoid Dependence on Text Attributes:
+Do not rely on the @text attribute or any values that may change, such as dynamic content, user data, or localized strings.
+3.Do Not Use Absolute Paths:
+Avoid writing full XPaths from the root node. Use relative paths (starting with //) to ensure selectors remain robust if the UI structure changes.
+4.Keep XPath Short and Maintainable:
+Create the shortest possible XPath that still uniquely identifies the element. Simpler selectors are easier to maintain and less likely to break.
+5.Avoid Indexes Whenever Possible:
+Do not select elements by their position or index. Use stable attributes for uniqueness instead.
+6.Avoid Unstable Attributes:
+Do not use attributes like @class, @bounds, or @package, as these can change across devices or app versions.
+7.Combine Multiple Stable Attributes if Needed:
+If a single attribute does not guarantee uniqueness, combine two or more stable attributes (such as @resource-id and @content-desc).
+8.Ensure XPath Uniqueness:
+Verify that each generated XPath uniquely matches only one element in the UI hierarchy.
+9.Use Partial Attribute Matching Only as a Last Resort:
+Use functions like contains() on stable attributes only when necessary, and only if the substring is guaranteed to be unique and consistent.
+10.Never Use Dynamic or Temporary Values:
+Avoid any attribute values that may change at runtime, such as randomly generated IDs, timestamps, or session-specific data.
