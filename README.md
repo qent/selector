@@ -1,4 +1,4 @@
-# XPath Prompt MCP Server
+# XPath MCP Server
 
 This repository contains a minimal [MCP](https://github.com/modelcontextprotocol) server built with the `mcp` Python package. The server exposes a single prompt describing best practices for generating XPath selectors for Android UI elements.
 
@@ -24,13 +24,25 @@ python server.py
 The server will start in `stdio` mode. Use any compatible MCP client to request
 the `xpath_selector_rules` prompt.
 
-## Connecting to a client
+## Debug a client
 
-Install the optional CLI tools and register the server with your MCP client:
+Install the optional CLI tools and launch in dev mode:
 
 ```bash
 pip install "mcp[cli]"
-mcp install server.py
+mcp dev server.py
+```
+
+## Connecting to a client
+
+Add configuration:
+```json
+    "android_selector_mcp": {
+      "command": "/Users/username/selector/venv/bin/python",
+      "args": [
+        "/Users/username/selector/server.py"
+      ]
+    }
 ```
 
 After installation, start the server from the client and request the
