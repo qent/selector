@@ -1,11 +1,15 @@
-# Android Hierarchy Element Selector MCP Server
+# Android XPath Selector Server
 
-This repository contains a minimal [MCP](https://github.com/modelcontextprotocol) server built with the `mcp` Python package. 
+This project implements a minimal [Model Context Protocol (MCP)](https://github.com/modelcontextprotocol) server that assists with building stable XPath selectors for Android user interfaces. The server exposes two capabilities:
+
+- **Prompt `xpath_selector_rules`** – Returns guidelines describing how to craft robust XPath expressions.
+- **Tool `android_screen_hierarchy`** – Connects to an Android device using `uiautomator2` and returns a structured representation of the current UI hierarchy.
 
 ## Requirements
 - Python 3.12+
+- An Android device accessible via `adb` for the hierarchy tool
 
-Install dependencies:
+Install dependencies with:
 
 ```bash
 pip install -r requirements.txt
@@ -21,30 +25,34 @@ cd selector
 python server.py
 ```
 
-The server will start in `stdio` mode. Use any compatible MCP client to request
-the `xpath_selector_rules` prompt.
+The server will run in `stdio` mode. Any MCP-compatible client can request the prompt or invoke the hierarchy tool.
 
-## Debug a client
+## Development
 
-Install the optional CLI tools and launch in dev mode:
+Before committing changes, format and test the code:
+
+```bash
+isort .
+black .
+pytest
+```
+
+You can also launch the server with the optional CLI provided by `mcp`:
 
 ```bash
 pip install "mcp[cli]"
 mcp dev server.py
 ```
 
-## Connecting to a client
+## Example client configuration
 
-Add configuration for Claude desktop (```/Users/username/Library/Application Support/Claude/claude_desktop_config.json```) or other client:
+For Claude Desktop, add an entry to `~/Library/Application Support/Claude/claude_desktop_config.json`:
+
 ```json
 "android_selector_mcp": {
-    "command": "/Users/username/selector/venv/bin/python",
-    "args": [
-        "/Users/username/selector/server.py"
-    ]
+    "command": "/path/to/python",
+    "args": ["/path/to/selector/server.py"]
 }
 ```
 
-After installation, start the server from the client and request the
-`xpath_selector_rules` prompt or call the `android_screen_hierarchy` tool as
-needed.
+After configuring, start the server from the client and use the provided prompt or tool as needed.
