@@ -1,0 +1,12 @@
+Selecting Elements with Espresso
+1. Prefer resource ID: use onView(withId(R.id.your_id)) whenever possible.
+2. Use content description for accessibility elements via withContentDescription.
+3. Avoid matching on text unless it is stable and localized strings are not a concern.
+4. Combine multiple matchers with allOf() to ensure uniqueness.
+5. Interact with scrollable containers using RecyclerViewActions or scrollTo().
+6. Avoid absolute view hierarchies; use withParent or isDescendantOfA sparingly.
+7. Wait for asynchronous operations with IdlingResource instead of sleeps.
+8. Write custom Matchers for complex cases and reuse them across tests.
+9. Keep selectors short and focused on stable attributes only.
+10. Validate that each selector matches a single view before using it in tests.
+
