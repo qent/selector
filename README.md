@@ -37,12 +37,12 @@ mcp dev server.py
 
 Add configuration:
 ```json
-    "android_selector_mcp": {
-      "command": "/Users/username/selector/venv/bin/python",
-      "args": [
+"android_selector_mcp": {
+    "command": "/Users/username/selector/venv/bin/python",
+    "args": [
         "/Users/username/selector/server.py"
-      ]
-    }
+    ]
+}
 ```
 
 After installation, start the server from the client and request the
