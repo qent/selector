@@ -1,6 +1,6 @@
-# XPath MCP Server
+# Android Hierarchy Element Selector MCP Server
 
-This repository contains a minimal [MCP](https://github.com/modelcontextprotocol) server built with the `mcp` Python package. The server exposes a single prompt describing best practices for generating XPath selectors for Android UI elements.
+This repository contains a minimal [MCP](https://github.com/modelcontextprotocol) server built with the `mcp` Python package. 
 
 ## Requirements
 - Python 3.12+
@@ -35,7 +35,7 @@ mcp dev server.py
 
 ## Connecting to a client
 
-Add configuration:
+Add configuration for Claude desktop (```/Users/username/Library/Application Support/Claude/claude_desktop_config.json```) or other client:
 ```json
 "android_selector_mcp": {
     "command": "/Users/username/selector/venv/bin/python",
