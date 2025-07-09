@@ -1,8 +1,9 @@
 # Android XPath Selector Server
 
-This project implements a minimal [Model Context Protocol (MCP)](https://github.com/modelcontextprotocol) server that assists with building stable XPath selectors for Android user interfaces. The server exposes two capabilities:
+This project implements a minimal [Model Context Protocol (MCP)](https://github.com/modelcontextprotocol) server that assists with building stable selectors for Android user interfaces. The server exposes three tools:
 
-- **Prompt `xpath_selector_rules`** – Returns guidelines describing how to craft robust XPath expressions.
+- **Tool `xpath_selector_rules`** – Returns guidelines describing how to craft robust XPath expressions.
+- **Tool `espresso_selector_rules`** – Provides best practices for reliable Espresso selectors.
 - **Tool `android_screen_hierarchy`** – Connects to an Android device using `uiautomator2` and returns a structured representation of the current UI hierarchy.
 
 ## Requirements
@@ -25,7 +26,7 @@ cd selector
 python server.py
 ```
 
-The server will run in `stdio` mode. Any MCP-compatible client can request the prompt or invoke the hierarchy tool.
+The server will run in `stdio` mode. Any MCP-compatible client can invoke the provided tools.
 
 ## Development
 
@@ -55,4 +56,4 @@ For Claude Desktop, add an entry to `~/Library/Application Support/Claude/claude
 }
 ```
 
-After configuring, start the server from the client and use the provided prompt or tool as needed.
+After configuring, start the server from the client and use the provided tools as needed.

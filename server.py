@@ -6,15 +6,22 @@ from mcp.server.fastmcp import FastMCP
 
 from hierarchy import parse_xml_to_tree
 
-PROMPT_FILE = Path(__file__).with_name("prompt.txt")
+XPATH_PROMPT_FILE = Path(__file__).with_name("prompt.txt")
+ESPRESSO_PROMPT_FILE = Path(__file__).with_name("espresso_prompt.txt")
 
-server = FastMCP(name="XPathPromptServer")
+server = FastMCP(name="SelectorServer")
 
 
-@server.prompt(name="xpath_selector_rules", title="XPath selector rules")
+@server.tool(name="xpath_selector_rules", title="XPath selector rules")
 def xpath_selector_rules() -> str:
     """Return rules for generating robust XPath selectors."""
-    return PROMPT_FILE.read_text()
+    return XPATH_PROMPT_FILE.read_text()
+
+
+@server.tool(name="espresso_selector_rules", title="Espresso selector rules")
+def espresso_selector_rules() -> str:
+    """Return best practices for Espresso selectors."""
+    return ESPRESSO_PROMPT_FILE.read_text()
 
 
 @server.tool(name="android_screen_hierarchy", title="Android screen hierarchy")
