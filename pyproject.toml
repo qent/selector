@@ -21,6 +21,9 @@ selector-server = "selector.server:server.run"
 where = ["."]
 include = ["selector*"]
 
+[tool.setuptools.package-data]
+selector = ["prompts/*.txt"]
+
 [tool.isort]
 profile = "black"
 
