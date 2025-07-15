@@ -7,7 +7,7 @@ This project implements a minimal [Model Context Protocol (MCP)](https://github.
 - **Tool `android_screen_hierarchy`** – Connects to an Android device using `uiautomator2` and returns a structured representation of the current UI hierarchy.
 
 ## Requirements
-- Python 3.12+
+ - Python 3.11+
 - An Android device accessible via `adb` for the hierarchy tool
 
 Install the package directly from GitHub:
