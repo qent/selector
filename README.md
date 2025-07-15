@@ -13,7 +13,7 @@ This project implements a minimal [Model Context Protocol (MCP)](https://github.
 Install the package directly from GitHub:
 
 ```bash
-pip install "git+https://github.com/<user>/selector.git"
+pip install "git+https://github.com/qent/selector.git"
 ```
 
 ## Running the server
