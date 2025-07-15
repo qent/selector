@@ -1,0 +1,33 @@
+[build-system]
+requires = ["setuptools>=61"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "selector"
+version = "0.1.0"
+description = "Android XPath Selector Server"
+readme = "README.md"
+requires-python = ">=3.12"
+license = {file = "LICENSE"}
+dependencies = [
+    "mcp",
+    "uiautomator2",
+]
+
+[project.scripts]
+selector-server = "selector.server:server.run"
+
+[tool.setuptools.packages.find]
+where = ["."]
+include = ["selector*"]
+
+[tool.isort]
+profile = "black"
+
+[tool.black]
+line-length = 88
+
+[tool.mypy]
+python_version = "3.12"
+ignore_missing_imports = true
+

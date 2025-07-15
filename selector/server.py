@@ -4,7 +4,7 @@ from typing import Any
 import uiautomator2 as u2  # type: ignore
 from mcp.server.fastmcp import FastMCP
 
-from hierarchy import parse_xml_to_tree
+from .hierarchy import parse_xml_to_tree
 
 XPATH_PROMPT_FILE = Path(__file__).with_name("prompt.txt")
 ESPRESSO_PROMPT_FILE = Path(__file__).with_name("espresso_prompt.txt")

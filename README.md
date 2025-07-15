@@ -10,23 +10,21 @@ This project implements a minimal [Model Context Protocol (MCP)](https://github.
 - Python 3.12+
 - An Android device accessible via `adb` for the hierarchy tool
 
-Install dependencies with:
+Install the package directly from GitHub:
 
 ```bash
-pip install -r requirements.txt
+pip install "git+https://github.com/<user>/selector.git"
 ```
 
 ## Running the server
 
-Clone the repository and start the server using the standard I/O transport:
+After installation, launch the server using the installed console script:
 
 ```bash
-git clone <repo-url>
-cd selector
-python server.py
+selector-server
 ```
 
-The server will run in `stdio` mode. Any MCP-compatible client can invoke the provided tools.
+The server will run in `stdio` mode and any MCP-compatible client can invoke the provided tools.
 
 ## Development
 
@@ -35,6 +33,7 @@ Before committing changes, format and test the code:
 ```bash
 isort .
 black .
+mypy .
 pytest
 ```
 
@@ -51,8 +50,8 @@ For Claude Desktop, add an entry to `~/Library/Application Support/Claude/claude
 
 ```json
 "android_selector_mcp": {
-    "command": "/path/to/python",
-    "args": ["/path/to/selector/server.py"]
+    "command": "/path/to/selector-server",
+    "args": []
 }
 ```
 

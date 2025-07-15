@@ -1,15 +1,11 @@
 import asyncio
 import json
-import sys
-from pathlib import Path
 from unittest.mock import MagicMock, patch
-
-sys.path.append(str(Path(__file__).resolve().parents[1]))
 
 from mcp.types import TextContent
 
-from hierarchy import parse_xml_to_tree
-from server import server
+from selector.hierarchy import parse_xml_to_tree
+from selector.server import server
 
 XML = """
 <hierarchy>
@@ -24,7 +20,7 @@ XML = """
 async def call_tool() -> tuple[list[TextContent], dict[str, list[dict]]]:
     fake_device = MagicMock()
     fake_device.dump_hierarchy.return_value = XML
-    with patch("server.u2.connect", return_value=fake_device):
+    with patch("selector.server.u2.connect", return_value=fake_device):
         result = await server.call_tool("android_screen_hierarchy", {})
     assert isinstance(result, tuple), "Unexpected tool result type"
     content_list, structured = result

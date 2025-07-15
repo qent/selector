@@ -1,12 +1,8 @@
 import asyncio
-import sys
-from pathlib import Path
-
-sys.path.append(str(Path(__file__).resolve().parents[1]))
 
 from mcp.types import TextContent
 
-from server import ESPRESSO_PROMPT_FILE, XPATH_PROMPT_FILE, server
+from selector.server import ESPRESSO_PROMPT_FILE, XPATH_PROMPT_FILE, server
 
 
 async def get_tool_text(tool_name: str) -> str:
