@@ -1,6 +1,6 @@
-# Android XPath Selector Server
+# Android UI Selector Server
 
-This project implements a minimal [Model Context Protocol (MCP)](https://github.com/modelcontextprotocol) server that assists with building stable selectors for Android user interfaces. The server exposes three tools:
+This project implements a minimal [Model Context Protocol (MCP)](https://github.com/modelcontextprotocol) server that assists with building stable selectors for Android user interfaces. It includes guidance for both XPath selectors used with `uiautomator2` and view matchers for Espresso. The server exposes three tools:
 
 - **Tool `xpath_selector_rules`** – Returns guidelines describing how to craft robust XPath expressions.
 - **Tool `espresso_selector_rules`** – Provides best practices for reliable Espresso selectors.
