@@ -6,8 +6,9 @@ from mcp.server.fastmcp import FastMCP
 
 from .hierarchy import parse_xml_to_tree
 
-XPATH_PROMPT_FILE = Path(__file__).with_name("prompt.txt")
-ESPRESSO_PROMPT_FILE = Path(__file__).with_name("espresso_prompt.txt")
+PROMPTS_DIR = Path(__file__).with_name("prompts")
+XPATH_PROMPT_FILE = PROMPTS_DIR / "xpath_prompt.txt"
+ESPRESSO_PROMPT_FILE = PROMPTS_DIR / "espresso_prompt.txt"
 
 server = FastMCP(name="SelectorServer")
 
